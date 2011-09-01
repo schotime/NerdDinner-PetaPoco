@@ -1,0 +1,17 @@
+﻿@model PagedList.PagedList<NerdDinner.Models.Dinner>
+@{
+    ViewBag.Title = "Results";
+    Layout = "~/Views/Shared/_Layout.Mobile.cshtml";
+}
+<ul id="Details" data-role="listview" data-inset="true">
+    @foreach (var dinner in Model)
+    {
+        <li><a href="@Url.RouteUrl("PrettyDetails", new { Id = dinner.DinnerID })">
+            @dinner.EventDate.ToString("MMM dd") @HttpUtility.HtmlEncode(dinner.Description)
+        </a></li> 
+    }
+    @if (Model.Count == 0)
+    {
+        <li>No Nerd Dinners found!</li>
+    }
+</ul>

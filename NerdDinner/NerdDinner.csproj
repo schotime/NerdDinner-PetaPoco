@@ -1,0 +1,518 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{67C8B33C-A6AE-421F-BF79-3FB8F37A64C0}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NerdDinner</RootNamespace>
+    <AssemblyName>NerdDinner</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DDay.iCal, Version=0.80.0.0, Culture=neutral, PublicKeyToken=1790ba318ebc5d56, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\DDay.iCal.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth">
+      <HintPath>..\packages\DotNetOpenAuth.3.4.7.11121\lib\DotNetOpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.corelibrary.1.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="FiftyOne.Foundation">
+      <HintPath>..\packages\51Degrees.mobi.1.2.0.5\lib\NET40\FiftyOne.Foundation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="MoreLinq">
+      <HintPath>..\packages\morelinq.1.0\lib\net35\MoreLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcMiniProfiler">
+      <HintPath>..\packages\MiniProfiler.1.9\lib\net40\MvcMiniProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcMiniProfiler.EntityFramework">
+      <HintPath>..\packages\MiniProfiler.EF.1.9.1\lib\net40\MvcMiniProfiler.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenSearchToolkit, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenSearchToolkit.1.1\lib\OpenSearchToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.10.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.10\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\System.Web.Providers.1.0\lib\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages" />
+    <Reference Include="System.Web.Helpers" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.4.2\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\MiniProfiler.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\DinnersController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ResourceController.cs" />
+    <Compile Include="Controllers\RSVPController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\CalendarHelpers.cs" />
+    <Compile Include="Helpers\ControllerHelpers.cs" />
+    <Compile Include="Helpers\CountryList.cs" />
+    <Compile Include="Helpers\FileNotFoundResult.cs" />
+    <Compile Include="Helpers\HandleErrorWithELMAHAttribute.cs" />
+    <Compile Include="Helpers\iCalResult.cs" />
+    <Compile Include="Helpers\InMemoryTokenManager.cs" />
+    <Compile Include="Helpers\MobileCapableWebFormViewEngine.cs" />
+    <Compile Include="Helpers\MobileCapableRazorViewEngine.cs" />
+    <Compile Include="Helpers\RSSResult.cs" />
+    <Compile Include="Helpers\StringExtensions.cs" />
+    <Compile Include="Helpers\TwitterConsumer.cs" />
+    <Compile Include="Helpers\UrlHelperExtensions.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Dinner.cs" />
+    <Compile Include="Models\DinnerRepository.cs" />
+    <Compile Include="Models\FlairViewModel.cs" />
+    <Compile Include="Models\IDinnerRepository.cs" />
+    <Compile Include="Models\IRepository.cs" />
+    <Compile Include="Models\NerdDinners.cs" />
+    <Compile Include="Models\NerdIdentity.cs" />
+    <Compile Include="Models\RSVP.cs" />
+    <Compile Include="Models\RuleViolation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\EmbeddedResourceUrlService.cs" />
+    <Compile Include="Services\GeolocationService.cs" />
+    <Compile Include="Services\JSONPSupportBehavior.cs" />
+    <Compile Include="Services\OData.svc.cs">
+      <DependentUpon>OData.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\OpenIdRelyingPartyService.cs" />
+    <Compile Include="Services\OpenSearch.ashx.cs">
+      <DependentUpon>OpenSearch.ashx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="apple-touch-icon.png" />
+    <Content Include="App_Data\web_browsers_patch.xml" />
+    <Content Include="Content\Flair.css" />
+    <Content Include="Content\images\google.gif" />
+    <Content Include="Content\images\infocard_23x16.png" />
+    <Content Include="Content\images\myopenid.png" />
+    <Content Include="Content\images\openid.gif" />
+    <Content Include="Content\images\openid_login.gif" />
+    <Content Include="Content\images\verisign.gif" />
+    <Content Include="Content\images\yahoo.gif" />
+    <Content Include="Content\images\yahoo_login.png" />
+    <Content Include="Content\Img\bkg.jpg" />
+    <Content Include="Content\Img\btn-go.png" />
+    <Content Include="Content\Img\btn-login.png" />
+    <Content Include="Content\Img\button-google.png" />
+    <Content Include="Content\Img\button-twitter.png" />
+    <Content Include="Content\Img\button-yahoo.png" />
+    <Content Include="Content\Img\content-bottom.png" />
+    <Content Include="Content\Img\content-top.png" />
+    <Content Include="Content\Img\exclamation.png" />
+    <Content Include="Content\Img\google.gif" />
+    <Content Include="Content\Img\header-bkg.jpg" />
+    <Content Include="Content\Img\hm-content-bkg.png" />
+    <Content Include="Content\Img\hm-content-bottom.png" />
+    <Content Include="Content\Img\hm-content-top.png" />
+    <Content Include="Content\Img\hm-masthead.png" />
+    <Content Include="Content\Img\icon-facebook.png" />
+    <Content Include="Content\Img\icon-feed-28x28.png" />
+    <Content Include="Content\Img\icon-google.png" />
+    <Content Include="Content\Img\icon-icalfeed-16x16.png" />
+    <Content Include="Content\Img\icon-icalfeed-28x28.png" />
+    <Content Include="Content\Img\icon-odatafeed-28x28.png" />
+    <Content Include="Content\Img\icon-twitter.png" />
+    <Content Include="Content\Img\icon-yahoo.png" />
+    <Content Include="Content\Img\logo.png" />
+    <Content Include="Content\Img\menu-left-selected.png" />
+    <Content Include="Content\Img\menu-left.png" />
+    <Content Include="Content\Img\menu-right-selected.png" />
+    <Content Include="Content\Img\menu-right.png" />
+    <Content Include="Content\Img\microformat_hcalendar.png" />
+    <Content Include="Content\Img\Mobile\btn-search.jpg" />
+    <Content Include="Content\Img\Mobile\logo.png" />
+    <Content Include="Content\Img\Mobile\logo_medium.jpg" />
+    <Content Include="Content\Img\Mobile\logo_medium.png" />
+    <Content Include="Content\Img\Mobile\logo_medium_trans.png" />
+    <Content Include="Content\Img\Mobile\logo_small.png" />
+    <Content Include="Content\Img\search-bubble.png" />
+    <Content Include="Content\Img\search-header.png" />
+    <Content Include="Content\Img\yahoo.gif" />
+    <Content Include="Content\iui\backButton.png" />
+    <Content Include="Content\iui\blueButton.png" />
+    <Content Include="Content\iui\cancel.png" />
+    <Content Include="Content\iui\custom.css" />
+    <Content Include="Content\iui\custom.js" />
+    <Content Include="Content\iui\grayButton.png" />
+    <Content Include="Content\iui\iPhoneLogo.png" />
+    <Content Include="Content\iui\iui.css" />
+    <Content Include="Content\iui\iui.js" />
+    <Content Include="Content\iui\iuix.css" />
+    <Content Include="Content\iui\iuix.js" />
+    <Content Include="Content\iui\LICENSE.txt" />
+    <Content Include="Content\iui\listArrow.png" />
+    <Content Include="Content\iui\listArrowSel.png" />
+    <Content Include="Content\iui\listGroup.png" />
+    <Content Include="Content\iui\loading.gif" />
+    <Content Include="Content\iui\NOTICE.txt" />
+    <Content Include="Content\iui\pinstripes.png" />
+    <Content Include="Content\iui\README.txt" />
+    <Content Include="Content\iui\releaseNotes.txt" />
+    <Content Include="Content\iui\selection.png" />
+    <Content Include="Content\iui\thumb.png" />
+    <Content Include="Content\iui\toggle.png" />
+    <Content Include="Content\iui\toggleOn.png" />
+    <Content Include="Content\iui\toolbar.png" />
+    <Content Include="Content\iui\toolButton.png" />
+    <Content Include="Content\iui\whiteButton.png" />
+    <Content Include="Content\jquery.mobile-1.0b2.css" />
+    <Content Include="Content\jquery.mobile-1.0b2.min.css" />
+    <Content Include="Content\loginpopup.css" />
+    <Content Include="Content\Mobile\mobile-xhtml.css" />
+    <Content Include="Content\nerd.jpg" />
+    <Content Include="Content\Production.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.all.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.base.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\theme\images\ui-bg_flat_55_999999_40x100.png" />
+    <Content Include="Content\theme\images\ui-bg_flat_75_aaaaaa_40x100.png" />
+    <Content Include="Content\theme\images\ui-bg_glass_45_0078ae_1x400.png" />
+    <Content Include="Content\theme\images\ui-bg_glass_55_f8da4e_1x400.png" />
+    <Content Include="Content\theme\images\ui-bg_glass_75_79c9ec_1x400.png" />
+    <Content Include="Content\theme\images\ui-bg_gloss-wave_45_e14f1c_500x100.png" />
+    <Content Include="Content\theme\images\ui-bg_gloss-wave_50_6eac2c_500x100.png" />
+    <Content Include="Content\theme\images\ui-bg_gloss-wave_75_2191c0_500x100.png" />
+    <Content Include="Content\theme\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Content\theme\images\ui-icons_0078ae_256x240.png" />
+    <Content Include="Content\theme\images\ui-icons_056b93_256x240.png" />
+    <Content Include="Content\theme\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Content\theme\images\ui-icons_e0fdff_256x240.png" />
+    <Content Include="Content\theme\images\ui-icons_f5e175_256x240.png" />
+    <Content Include="Content\theme\images\ui-icons_f7a50d_256x240.png" />
+    <Content Include="Content\theme\images\ui-icons_fcd113_256x240.png" />
+    <Content Include="Content\theme\ui.accordion.css" />
+    <Content Include="Content\theme\ui.all.css" />
+    <Content Include="Content\theme\ui.base.css" />
+    <Content Include="Content\theme\ui.core.css" />
+    <Content Include="Content\theme\ui.datepicker.css" />
+    <Content Include="Content\theme\ui.dialog.css" />
+    <Content Include="Content\theme\ui.progressbar.css" />
+    <Content Include="Content\theme\ui.resizable.css" />
+    <Content Include="Content\theme\ui.slider.css" />
+    <Content Include="Content\theme\ui.tabs.css" />
+    <Content Include="Content\theme\ui.theme.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Logs\readme.txt" />
+    <Content Include="Scripts\date.format.js" />
+    <Content Include="Scripts\geo-polyfill.js" />
+    <Content Include="Scripts\geo.js" />
+    <Content Include="Scripts\jquery-1.6.2-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.6.2.js" />
+    <Content Include="Scripts\jquery-1.6.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.15.js" />
+    <Content Include="Scripts\jquery-ui-1.8.15.min.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
+    <Content Include="Scripts\jquery.mobile-1.0b2.js" />
+    <Content Include="Scripts\jquery.mobile-1.0b2.min.js" />
+    <Content Include="Scripts\modernizr-1.7.js" />
+    <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Scripts\MSAjaxHistoryBundle.js" />
+    <Content Include="Scripts\NerdDinner.js" />
+    <Content Include="Scripts\timepicker_plug\TimePickerAddOn.js" />
+    <Content Include="Scripts\timepicker_plug\css\style.css" />
+    <Content Include="Scripts\timepicker_plug\timepicker.js" />
+    <Content Include="Scripts\yepnope.1.0.1-min.js" />
+    <Content Include="Scripts\yepnope.js" />
+    <Content Include="Services\OData.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_MINIPROFILER UPDATED Layout.cshtml" />
+    <None Include="_bin_deployableAssemblies\Microsoft.Web.Infrastructure.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.WebPages.Razor.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.WebPages.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.WebPages.Deployment.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.Razor.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.Helpers.dll" />
+    <None Include="_bin_deployableAssemblies\System.Web.Mvc.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ConnectionStrings.config" />
+    <Content Include="Services\OpenSearch.ashx" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
+    <Content Include="Views\Account\LogOn.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Dinners\Create.cshtml" />
+    <Content Include="Views\Dinners\Delete.cshtml" />
+    <Content Include="Views\Dinners\Deleted.cshtml" />
+    <Content Include="Views\Dinners\Details.cshtml" />
+    <Content Include="Views\Dinners\Edit.cshtml" />
+    <Content Include="Views\Dinners\Index.cshtml" />
+    <Content Include="Views\Dinners\InvalidOwner.cshtml" />
+    <Content Include="Views\Dinners\My.cshtml" />
+    <Content Include="Views\Dinners\NotFound.cshtml" />
+    <Content Include="Views\Dinners\WebSlice.cshtml" />
+    <Content Include="Views\Dinners\_DinnerForm.cshtml" />
+    <Content Include="Views\Dinners\_EditAndDeleteLinks.cshtml" />
+    <Content Include="Views\Dinners\_Map.cshtml" />
+    <Content Include="Views\Dinners\_RSVPStatus.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\PrivacyPolicy.cshtml" />
+    <Content Include="Views\Home\Xrds.cshtml" />
+    <Content Include="Views\Services\Flair.cshtml" />
+    <Content Include="Views\Services\JavascriptFlair.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CountryDropDown.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\LocationDetail.cshtml" />
+    <Content Include="Views\Shared\_LoginStatus.cshtml" />
+    <Content Include="Views\Shared\_Masthead.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\Week.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\Url.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\Time.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\Search.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\PhoneNumber.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\Number.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\Month.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\EmailAddress.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\DateTime-Local.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\Color.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Dinners\DinnerPagination.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\_LogonNative.cshtml" />
+    <Content Include="Views\Account\_LogonOpenId.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.Mobile.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.Mobile.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Dinners\Details.Mobile.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Results.Mobile.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\51Degrees.mobi.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\wurfl.xml.gz" />
+    <Content Include="Views\Shared\Lost.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lib\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50799</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" />
+</Project>
